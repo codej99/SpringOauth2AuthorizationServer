@@ -1,10 +1,6 @@
 server:
   port: 8081
 
-oauth2:
-  callback: http://localhost:8081/oauth2/callback
-  token: http://localhost:8081/oauth/token
-
 spring:
   h2:
     console:
@@ -17,5 +13,5 @@ spring:
     username: sa
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    properties.hibernate.hbm2ddl.auto: none
+    properties.hibernate.hbm2ddl.auto: update
     showSql: true
