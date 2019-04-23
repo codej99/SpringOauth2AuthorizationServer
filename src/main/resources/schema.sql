@@ -49,19 +49,3 @@ create table IF NOT EXISTS oauth_approvals (
 	expiresAt TIMESTAMP,
 	lastModifiedAt TIMESTAMP
 );
-
-
--- customized oauth_client_details table
-create table IF NOT EXISTS ClientDetails (
-  appId VARCHAR(256) PRIMARY KEY,
-  resourceIds VARCHAR(256),
-  appSecret VARCHAR(256),
-  scope VARCHAR(256),
-  grantTypes VARCHAR(256),
-  redirectUrl VARCHAR(256),
-  authorities VARCHAR(256),
-  access_token_validity INTEGER,
-  refresh_token_validity INTEGER,
-  additionalInformation VARCHAR(4096),
-  autoApproveScopes VARCHAR(256)
-);
