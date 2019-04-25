@@ -1,6 +1,5 @@
 package com.rest.oauth2.config;
 
-import com.rest.oauth2.service.security.CustomUserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
