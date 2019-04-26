@@ -16,6 +16,7 @@ spring:
     properties.hibernate.hbm2ddl.auto: update
     showSql: true
 
-oauth2:
-  jwt:
-    signkey: 123@#$
+security:
+  oauth2:
+    jwt:
+      signkey: 123@#$

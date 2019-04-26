@@ -31,7 +31,7 @@ public class Oauth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
     private final DataSource dataSource;
     private final CustomUserDetailService userDetailService;
 
-    @Value("${oauth2.jwt.signkey}")
+    @Value("${security.oauth2.jwt.signkey}")
     private String signKey;
 
     @Override
