@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -33,8 +33,8 @@ public class Oauth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
     private final DataSource dataSource;
     private final CustomUserDetailService userDetailService;
 
-//    @Value("${security.oauth2.jwt.signkey}")
-//    private String signKey;
+    @Value("${security.oauth2.jwt.signkey}")
+    private String signKey;
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
@@ -69,7 +69,7 @@ public class Oauth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
     }
 
     /**
-     * jwt converter를 등록
+     * jwt converter - signKey 공유 방식
      */
 //    @Bean
 //    public JwtAccessTokenConverter jwtAccessTokenConverter() {
@@ -78,11 +78,14 @@ public class Oauth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
 //        return converter;
 //    }
 
+    /**
+     * jwt converter - 비대칭 키 sign
+     */
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("jwt.jks"), "mySecretKey".toCharArray());
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new FileSystemResource("src/main/resources/oauth2jwt.jks"), "oauth2jwtpass".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("jwt"));
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("oauth2jwt"));
         return converter;
     }
 }

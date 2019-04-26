@@ -20,9 +20,3 @@ security:
   oauth2:
     jwt:
       signkey: 123@#$
-#    authorization:
-#      jwt:
-#        key-alias: oauth2jwt
-#        key-store: classpath:/oauth2jwt.jks
-#        key-password: oauth2jwtpass
-#        key-store-password: oauth2jwtpass
