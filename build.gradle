@@ -27,6 +27,8 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-oauth2:2.1.2.RELEASE'
     implementation 'com.google.code.gson:gson'
     compileOnly 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
