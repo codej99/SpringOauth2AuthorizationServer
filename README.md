@@ -1,3 +1,9 @@
+![Java_8](https://img.shields.io/badge/java-v1.8-red?logo=java)
+![Spring_Boot](https://img.shields.io/badge/Spring_Boot-v2.1.4-green.svg?logo=spring)
+![Spring_Cloud_Security](https://img.shields.io/badge/Spring_Cloud_Security-v2.1.2-green.svg?logo=spring)
+![Spring_Cloud_Security](https://img.shields.io/badge/Spring_Cloud_Oauth2-v2.1.2-green.svg?logo=spring)
+![GitHub stars](https://img.shields.io/github/stars/codej99/SpringOauth2AuthorizationServer?style=social)
+
 # Oauth2 AuthorizationServer(인증서버) 구축
 
 ### 0. 개요
